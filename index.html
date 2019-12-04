@@ -17,13 +17,14 @@
 			<div id="map5"></div>
 
 				<script>
-				var mymap = L.map('mapid').setView([47.056, -122.127], 9);
-			L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiY3Nhd3llcjQiLCJhIjoiY2syc2g2bnlzMGtyeDNubW55bHRzNnkzOSJ9.WZ63B0C4v437JrMyODN-6g', {
+				var map = L.map('map5').setView([47.056, -122.127], 9);
+			L.tileLayer('https://api.mapbox.com/styles/v1/csawyer4/ck2sivytp1zk41cvwg4a5mywm/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiY3Nhd3llcjQiLCJhIjoiY2syc2g2bnlzMGtyeDNubW55bHRzNnkzOSJ9.WZ63B0C4v437JrMyODN-6g', {
 				attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
 				maxZoom: 18,
-				id: 'mapbox.streets',
+				id: 'csawyer4.ck2sivytp1zk41cvwg4a5mywm',
 				accessToken: 'pk.eyJ1IjoiY3Nhd3llcjQiLCJhIjoiY2syc2g2bnlzMGtyeDNubW55bHRzNnkzOSJ9.WZ63B0C4v437JrMyODN-6g'
-			}).addTo(mymap);
+			}).addTo(map);
+
 
 				</script>
 	</body>
