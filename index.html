@@ -26,11 +26,13 @@
 				accessToken: 'pk.eyJ1IjoiY3Nhd3llcjQiLCJhIjoiY2syc2g2bnlzMGtyeDNubW55bHRzNnkzOSJ9.WZ63B0C4v437JrMyODN-6g'
 			}).addTo(map);
 
-L.MakiMarkers.accessToken = 'pk.eyJ1IjoiY3Nhd3llcjQiLCJhIjoiY2syc2g2bnlzMGtyeDNubW55bHRzNnkzOSJ9.WZ63B0C4v437JrMyODN-6g'
+			$.getJSON("sensitivewater.json",function(data){
 
-				$.getJSON("Sensitive_JSON.json",function(data){
-				L.geoJson(data).addTo(map);
-			});
+				    L.geoJson(data).addTo(map);
+				  });
+
+
+
 				</script>
 	</body>
 </html>
