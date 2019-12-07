@@ -28,18 +28,8 @@
 
 L.MakiMarkers.accessToken = 'pk.eyJ1IjoiY3Nhd3llcjQiLCJhIjoiY2syc2g2bnlzMGtyeDNubW55bHRzNnkzOSJ9.WZ63B0C4v437JrMyODN-6g'
 
-				$.getJson("Sensitive_Markers.geojson", function(data){
-					var mark = L.MakiMarkers.icon({
-					        icon: "water",
-									color: "#3399ff",
-					        size: "m"
-								});
-
-				L.geoJson(data, {
-				    pointToLayer: function (feature, latlng){
-				      var marker = L.marker(latlng,{icon: mark});
-						}
-					}).addTo(map);
+				$.getJSON("Sensitive_JSON.json",function(data){
+				L.geoJson(data).addTo(map);
 			});
 				</script>
 	</body>
