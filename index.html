@@ -10,6 +10,7 @@
 
 			<script src="leaflet.js"></script>
 			<script src="jquery-3.4.1.min.js"></script>
+			<script src="Leaflet.MakiMarkers.js"></script>
 
 	</head>
 	<body>
@@ -25,7 +26,21 @@
 				accessToken: 'pk.eyJ1IjoiY3Nhd3llcjQiLCJhIjoiY2syc2g2bnlzMGtyeDNubW55bHRzNnkzOSJ9.WZ63B0C4v437JrMyODN-6g'
 			}).addTo(map);
 
+L.MakiMarkers.accessToken = 'pk.eyJ1IjoiY3Nhd3llcjQiLCJhIjoiY2syc2g2bnlzMGtyeDNubW55bHRzNnkzOSJ9.WZ63B0C4v437JrMyODN-6g'
 
+				$.getJson("Sensitive_Markers.geojson", function(data){
+					var mark = L.MakiMarkers.icon({
+					        icon: "water",
+									color: "#3399ff",
+					        size: "m"
+								});
+
+				L.geoJson(data, {
+				    pointToLayer: function (feature, latlng){
+				      var marker = L.marker(latlng,{icon: mark});
+						}
+					}).addTo(map);
+			});
 				</script>
 	</body>
 </html>
