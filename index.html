@@ -9,8 +9,9 @@
 			<link rel="stylesheet" href="styles.css"/>
 
 			<script src="leaflet.js"></script>
-			<script src="jquery-3.4.1.min.js"></script>
 			<script src="Leaflet.MakiMarkers.js"></script>
+			<script src="jquery-3.4.1.min.js"></script>
+
 
 	</head>
 	<body>
@@ -18,7 +19,7 @@
 			<div id="map5"></div>
 
 				<script>
-				var map = L.map('map5').setView([47.056, -122.127], 9);
+				var mymap = L.map('map5').setView([47.056, -122.127], 9);
 			L.tileLayer('https://api.mapbox.com/styles/v1/csawyer4/ck2sivytp1zk41cvwg4a5mywm/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiY3Nhd3llcjQiLCJhIjoiY2syc2g2bnlzMGtyeDNubW55bHRzNnkzOSJ9.WZ63B0C4v437JrMyODN-6g', {
 				attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
 				maxZoom: 18,
@@ -26,10 +27,22 @@
 				accessToken: 'pk.eyJ1IjoiY3Nhd3llcjQiLCJhIjoiY2syc2g2bnlzMGtyeDNubW55bHRzNnkzOSJ9.WZ63B0C4v437JrMyODN-6g'
 			}).addTo(map);
 
-			$.getJSON("sensitivewater.json",function(data){
+L.MakiMarkers.accessToken= 'pk.eyJ1IjoiY3Nhd3llcjQiLCJhIjoiY2syc2g2bnlzMGtyeDNubW55bHRzNnkzOSJ9.WZ63B0C4v437JrMyODN-6g'
 
-				    L.geoJson(data).addTo(map);
-				  });
+			$.getJSON("Restoring.geojson",function(rdata){
+						 var mark = L.MakiMarkers.icon({
+							 icon: "water",
+							 color: "#3399ff",
+							 size: "m"
+						 });
+				 L.geoJson(rdata , {
+					 pointToLayer: function (feature, latlng){
+						 var marker = L.marker(latlng,{icon: mark});
+						 marker.bindPopup("This is the ");
+						 return marker;
+					 }
+				 }).addTo(mymap);
+			 });
 
 
 
