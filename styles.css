@@ -1,21 +1,37 @@
-#map5 { height: 65vh; width: 80vw; margin: 0 auto;}
-#map6 { height: 65vh; width: 80vw; margin: 0 auto;}
+html{
+  background-color: #e0ebeb;
+}
+
+#map5 { height: 65vh; width: 80vw; margin: 0 auto;
+  border:3px; border-style:solid; border-color:#669999;}
+#map6 { height: 65vh; width: 80vw; margin: 0 auto;
+  border:3px; border-style:solid; border-color:#669999;}
 
 h1{
+  font-family: 'Bebas Neue', sans-serif;
   text-align: center;
-  font-size: 3em;
+  font-size: 3.5em;
+  margin: -5px;
 }
 h2{
+  font-family: 'Fjalla One', sans-serif;
   text-align: center;
   font-size: 1.75em;
+  margin: 2px;
 }
 h3{
+  font-family: 'Fjalla One', sans-serif;
   text-align: left;
 }
-
-#footheader{
-  font-size: .90em;
+p{
+  font-family: sans-serif;
 }
-#foot{
-  font-size: .80em;
+footer{
+  background-color:#669999;
+}
+#footer{
+  font-family: 'Fjalla One', sans-serif;
+}
+ul{
+  font-family: sans-serif;
 }

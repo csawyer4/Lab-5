@@ -16,7 +16,7 @@
 			<script src="leaflet.markercluster.js"></script>
 			<script src="leaflet.fullscreen.js"></script>
 
-
+			<link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Fjalla+One&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<h1>Protecting Delicate Ecosystems</h1>
@@ -49,6 +49,16 @@
 
 			<h2>Fish Sensitive Areas</h2>
 				<div id="map6"></div>
+					<p>Fish sensative markers on the road.</p>
+
+			<footer>
+				<p id="footer">References
+				<ul>
+					<li>Pierce County. Sensative Area Markers. 8/25/2005.<a href="https://gisdata-piercecowa.opendata.arcgis.com/" target="_blank"> Pierce County Open Geospatial Data Portal.</a></li>
+
+				</ul>
+			</p>
+		</footer>
 
 				<script>
 				var mymap = L.map('map5').setView([47.142, -122.683], 9);
@@ -94,7 +104,7 @@ L.MakiMarkers.accessToken= 'pk.eyJ1IjoiY3Nhd3llcjQiLCJhIjoiY2syc2g2bnlzMGtyeDNub
  				var danger= L.geoJson(sdata , {
  					 pointToLayer: function (feature, latlng){
  						 var marker = L.marker(latlng,{icon: mark});
- 						 marker.bindPopup("This is approximately " + feature.properties.DIST_FT + " feet from a fish sensitive area");
+ 						 marker.bindPopup("This marker is approximately " + feature.properties.DIST_FT + " feet from a fish sensitive area.");
  						 return marker;
  					 }
  				 });
