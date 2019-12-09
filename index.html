@@ -47,7 +47,7 @@
 						<p>Historically the Foss waterway was where sewage was disposed of, so this location has been a dumping grounds for a long period of time. When they started working in the 2-3 acres, they had to spend a lot of money disposing of the materials correctly. The middle waterway is a tidally influenced system that contains mudflats, intertidal areas, wetlands, grasses, followed by trees and shrubs in the riparian zone. This restoration took place as the Superfund Act identified potentially responsible parties (PRP) to restore damage done to our natural resources.  Goals for this site was to bring the mudflats back and bring the area back to its historical ecology. John O’Loughlin mentioned Native Americans saying when the “tide is out, table is set” (12-6-18), and I believe this captures the essence of a clean, natural, and biodiverse area. Other goals were to bring back the physical landscape that had been taken over by urban development. This included creating dendritic features for more natural water movement and large plateaus to increase the vegetation. They created a 5-year monitoring plan of the sediment and vegetation to see if sediment is coming in or being taken out and if the vegetation is receding or advancing closer to the water. After this 5-year period they still have to monitor the lands they manage but this is mainly for cleanup or homelessness issues.
 						</p>
 
-			<h2>Fish Sensitive Areas</h2>
+			<h2>Fish Sensitive Areas in Pierce County</h2>
 				<div id="map6"></div>
 					<p>Fish sensative markers on the road.</p>
 
@@ -116,18 +116,30 @@ L.MakiMarkers.accessToken= 'pk.eyJ1IjoiY3Nhd3llcjQiLCJhIjoiY2syc2g2bnlzMGtyeDNub
  			 });
 
 
-//Pierce_Urban_Cluster does not work, need to properly convert to GeoJson.
-		// $.getJSON("Pierce_Urban_Cluster.json", function(pdata){
-		// 				L.geoJson(data, {
-		// 					style: function(feature) {
-		// 						return{
-		// 							color: "#ff0000"
-		// 						};
-		// 					}
-		// 				}).addTo(map);
-		// 			});
+		$.getJSON("Pierce_Urban_Area.geojson", function(pdata){
+						L.geoJson(pdata, {
+							style: function(feature) {
+								return{
+									color: "#d966ff"
+								};
+							},
+							onEachFeature: addPopup
+						}).addTo(map);
+					});
 
+		$.getJSON("Pierce_County.geojson", function(xdata){
+						L.geoJson(xdata, {
+							style: function(feature) {
+								return{
+									color: "#ff3300"
+								};
+							}
+						}).addTo(map);
+					});
 
+					function addPopup(feature, layer){
+						layer.bindPopup("This is an Urban Area Clsuter within Pierce County.")
+						}
 				</script>
 	</body>
 </html>
