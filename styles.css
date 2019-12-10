@@ -26,6 +26,9 @@ h3{
 p{
   font-family: sans-serif;
 }
+#fish{
+  text-align: center;
+}
 footer{
   background-color:#669999;
 }
@@ -34,4 +37,5 @@ footer{
 }
 ul{
   font-family: sans-serif;
+  list-style: none;
 }
