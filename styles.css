@@ -22,9 +22,22 @@ h2{
 h3{
   font-family: 'Fjalla One', sans-serif;
   text-align: left;
+  font-size: 1.25;
 }
 p{
   font-family: sans-serif;
+  margin-left: 10px;
+}
+.textwrap{
+  float: right;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  border:3px; border-style:solid; border-color:#669999;
+}
+#info{
+  text-align: center;
 }
 #fish{
   text-align: center;
